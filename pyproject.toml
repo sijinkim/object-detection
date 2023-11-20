@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+opencv-python = "^4.8.1.78"
 
 
 [build-system]
@@ -59,7 +60,7 @@ disable = ["R0903"]
 
   [tool.poe.tasks.lint]
   help = "Run the linter"
-  cmd  = "pylint objectdetection --disable=missing-docstring"
+  cmd  = "pylint objectdetection --disable=missing-docstring --generated-members=cv2"
 
   [tool.poe.tasks.style-black]
   help = "Validate black code style"
